@@ -14,8 +14,4 @@ export class HeroComponent implements OnInit {
 
   constructor() {
   }
-
-  ngOnChanges() {
-    console.log(`CLOG ngOnChanges "hero": `, this.hero);
-  }
 }
