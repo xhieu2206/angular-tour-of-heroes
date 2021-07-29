@@ -16,4 +16,12 @@ export class HeroService {
     this.messageService.add('HeroService: fetched heroes');
     return of(HEROES);
   }
+
+  getHeroById(id: number): Promise<any> {
+    return this.getHeroes().toPromise().then(heroes => {
+      this.messageService.add(`HeroService: fetched hero with id=${id}`);
+      return heroes.find(hero => hero.id === id);
+    });
+
+  }
 }
